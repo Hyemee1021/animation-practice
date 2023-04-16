@@ -1,0 +1,76 @@
+.container {
+  background-color: aquamarine;
+  width: 80%;
+  margin: auto;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+.parent {
+  background-color: blueviolet;
+  width: 400px;
+  height: 400px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg);
+  animation: spin 2s linear infinite alternate-reverse;
+  /*linear makes thing smoother*/
+}
+h2 {
+  animation: spin 5s linear infinite alternate-reverse;
+}
+.ball {
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(white 5%, red);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* animation: name duration timing-function delay iteration-count direction
+    fill-mode; */
+  animation: circle 5s infinite ease-in-out alternate-reverse;
+}
+@keyframes circle {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 85%;
+    /*have to cover property I used . 
+    I can not use bottom or right property*/
+    background: radial-gradient(white 5%, blue);
+  }
+  50% {
+    top: 88%;
+    left: 85%;
+  }
+  75% {
+    top: 88%;
+    left: 0%;
+    background: radial-gradient(white 5%, green);
+  }
+  100% {
+    top: 0;
+    left: 0%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
